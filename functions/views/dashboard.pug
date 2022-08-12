@@ -1,0 +1,157 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Dashboard
+  script.
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+  style.
+    table, tr, th, td{
+    border:1px solid black;
+    border-collapse: collapse;
+    }
+  link(rel='stylesheet' href='style.css')
+  link(rel='stylesheet' href='graph-style.css')
+
+
+include navbar.pug
+.main-content
+  .loc-menu
+    span#loc-name.loc-holder
+      b !{id}
+  .dash-date Recorded Time: !{data.date}
+  .aqi-data
+    .aqi-value
+      b AQI
+      br
+      span.aqi-act(id='aqi') !{data.aqi}
+    div
+      | PM
+      sub 10
+      br
+      span.aqi-value(id='pm_10') !{data.pm10}
+      |  &micro;g/m
+      sup 3
+    div
+      | PM
+      sub 2.5
+      br
+      span.aqi-value(id='pm_25') !{data.pm25}
+      |  &micro;g/m
+      sup 3
+    div
+      | PM
+      sub 1.0
+      br
+      span.aqi-value(id='pm_1') !{data.pm1}
+      |  &micro;g/m
+      sup 3
+    div
+      | Carbon Monoxide (CO)
+      br
+      span.aqi-value(id='co') !{data.co}
+      |  mg/m
+      sup 3
+    div
+      | Nitrogen Dioxide (NO
+      sub 2
+      | )
+      br
+      span.aqi-value(id='no2') !{data.no2}
+      |  &micro;g/m
+      sup 3
+    div
+      | Ozone (O
+      sub 3
+      | )
+      br
+      span.aqi-value(id='pm_o3') !{data.o3}
+      |  &micro;g/m
+      sup 3
+    div
+      | Sulphur Dioxide (SO
+      sub 2
+      | )
+      br
+      span.aqi-value(id='so2') !{data.so2}
+      |  &micro;g/m
+      sup 3
+  .weather-data
+    div
+      | Temperature
+      br
+      span#v_temp.aqi-value !{data.temp}
+      |  &#x2103;
+    div
+      | Humidity
+      br
+      span#v_hum.aqi-value !{data.hum}
+      |  %
+    div
+      | Pressure
+      br
+      span#v_pres.aqi-value !{data.pres}
+      |  hPa
+    div
+      | Wind Speed
+      br
+      span#v_ws.aqi-value !{data.ws}
+      |  m/s
+    div
+      | Wind Direction
+      br
+      span#v_wd.aqi-value !{data.wd}
+  a.weatherwidget-io(href='https://forecast7.com/en/31d1077d17/shimla/' data-label_1='SHIMLA' data-label_2='WEATHER' data-theme='pure') SHIMLA WEATHER
+  br
+  .graph-title Forecast (half hour)
+  .aqi-data(style='background-color: #f2f2f2;')
+    div
+      | PM
+      sub 10
+      br
+      span#v_pm10.aqi-value !{data.pm10Pre}
+      |  &micro;g/m
+      sup 3
+    div
+      | PM
+      sub 2.5
+      br
+      span#v_pm2.aqi-value !{data.pm25Pre}
+      |  &micro;g/m
+      sup 3
+    div
+      | PM
+      sub 1.0
+      br
+      span#v_pm1.aqi-value !{data.pm1Pre}
+      |  &micro;g/m
+      sup 3
+    div
+      | Carbon Monoxide (CO)
+      br
+      span#v_co.aqi-value !{data.coPre}
+      |  mg/m
+      sup 3
+    div
+      | Nitrogen Dioxide (NO
+      sub 2
+      | )
+      br
+      span#v_no2.aqi-value !{data.no2Pre}
+      |  &micro;g/m
+    div
+      | Ozone (O
+      sub 3
+      | )
+      br
+      span#v_o3.aqi-value !{data.o3Pre}
+      |  &micro;g/m
+      sup 3
+    div
+      | Sulphur Dioxide (SO
+      sub 2
+      | )
+      br
+      span#v_so2.aqi-value !{data.so2Pre}
+      |  &micro;g/m
+      sup 3

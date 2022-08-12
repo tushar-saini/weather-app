@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+body{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+table, tr, th, td{
+  border:1px solid black;
+  border-collapse: collapse;
+}
+
+/* Left side navigation bar */
+.nav-bar-left {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  background: #2C2C2C;
+  text-align: center;
+}
+
+.iit-logo {
+  width: 50%;
+  padding-top: 5%;
+}
+
+.nav-bar-left img {
+  margin: 1vh 0 5vh 0;
+  width: 50%;
+}
+
+.nav-bar-left a {
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: 'Alegreya SC', serif;
+}
+
+.nav-bar-left a:link {
+  color: white;
+}
+
+.nav-bar-left a:visited {
+  color: white;
+}
+
+.nav-bar-left a:hover {
+  color: #FFC300;
+  text-decoration: underline;
+}
+
+.nav-bar-left a:active {
+  color: #FFC300;
+}
+
+/* Left side Navigation bar ends */
+
+/* Main Content */
+.main-content {
+  position: absolute;
+  right: 0px;
+  width: 80%;
+}
+
+/* Index Page style */
+
+.index-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 0.8 1;
+  grid-template-rows: 800px 200px;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "image description"
+    "footer footer"
+}
+
+.image {
+  grid-area: image;
+  margin: auto;
+  width: 70%;
+  text-align: center;
+}
+
+.img-set {
+  max-width: 90%;
+}
+
+.description {
+  grid-area: description;
+  margin: auto;
+  padding-right: 20px;
+}
+
+.des-title {
+  font-family: 'Charm', cursive;
+  font-weight: 500;
+  font-size: 42px;
+}
+
+.des-box {
+  width: 8%;
+  height: 4px;
+  background: black;
+}
+
+.des-data {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.footer {
+  grid-area: footer;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.research-box {
+  width: 100%;
+  height: 100vh;
+}
